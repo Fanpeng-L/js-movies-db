@@ -1,16 +1,17 @@
-const API_URL =
+const POPULAR_URL =
   "https://api.themoviedb.org/3/discover/movie?page=1&sort_by=popularity.desc'&api_key=66b4d9bb8ecc7f3ab3cd095884f6962c";
 
 const SEARCH_URL =
   "https://api.themoviedb.org/3/search/movie?api_key=66b4d9bb8ecc7f3ab3cd095884f6962c&query='";
 
 // const IMG_PATH = `https://api.themoviedb.org/3/movie/${movie_id}/images`;
+// maybe the website has bug, images cannot be fetched.
 
 const main = document.querySelector("#main");
 const form = document.querySelector("#form");
 const search = document.querySelector("#search");
 
-getMovies(API_URL);
+getMovies(POPULAR_URL);
 
 async function getMovies(url) {
   const res = await fetch(url);
